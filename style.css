@@ -18,12 +18,12 @@ h1 {
 img {
   width: 320px;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .buttons {
   position: relative;
-  height: 220px;
+  height: 240px;
 }
 
 button {
@@ -34,6 +34,11 @@ button {
   cursor: pointer;
   margin: 10px;
   transition: all 0.3s ease;
+}
+
+#playBtn {
+  background-color: #ff7b9c;
+  color: white;
 }
 
 #yesBtn {
@@ -47,24 +52,39 @@ button {
   position: absolute;
 }
 
-/* ❤️ Floating hearts */
-.heart {
+.hidden {
+  display: none;
+}
+
+/* ❤️ Floating background hearts */
+.bg-heart {
   position: fixed;
   bottom: -20px;
-  font-size: 24px;
+  font-size: 22px;
   animation: floatUp 6s linear infinite;
-  opacity: 0.8;
+  opacity: 0.7;
   pointer-events: none;
 }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
   to {
     transform: translateY(-110vh) scale(1.5);
     opacity: 0;
+  }
+}
+
+/* 🎮 Falling game hearts */
+.game-heart {
+  position: fixed;
+  top: -30px;
+  font-size: 30px;
+  cursor: pointer;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
   }
 }
 
@@ -90,17 +110,11 @@ button {
   img {
     width: 85%;
   }
-
   h1 {
     font-size: 22px;
   }
-
   button {
     font-size: 16px;
     padding: 12px 22px;
-  }
-
-  .buttons {
-    height: 260px;
   }
 }
